@@ -108,12 +108,22 @@ a:hover, a:focus {
   font-size: 1.55rem;
 }
 
+/* Grid a tre colonne, l'estrema destra è una colonna vuota della stessa
+   larghezza del dado a sinistra: così il titolo resta centrato sul proprio
+   asse invece di essere spinto a destra dal dado, e si allinea con le due
+   righe sotto (che sono centrate sul solo testo). */
 .sito-header .sito-header-link {
   text-decoration: none;
   color: var(--colore-testo);
-  display: flex;
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
   align-items: center;
   gap: 0.75rem;
+}
+
+.sito-header .sito-header-link h1 {
+  grid-column: 2;
+  text-align: center;
 }
 
 /* Riga 2 della fascia: sottotitolo + biblioteca. Su schermo stretto le due
@@ -205,16 +215,20 @@ a:hover, a:focus {
    (seconda riga = continuazione). */
 
 .accoglienza {
-  padding: 1.75rem 0 0.25rem;
+  padding: 1.5rem 0 0.25rem;
   text-align: center;
 }
 
+/* È un'istruzione ("cosa devi fare"), la quarta voce della gerarchia della
+   home — dietro nome del sito, cos'è, di chi è (tutte nella fascia sopra).
+   Prima pesava più della fascia stessa (1.1rem pieno, colore pieno): qui
+   resta leggibile ma recede, come le altre righe di servizio del sito. */
 .accoglienza p {
   margin: 0 auto;
-  max-width: 46ch;
-  font-size: 1.1rem;
+  max-width: 42ch;
+  font-size: 0.92rem;
   line-height: 1.5;
-  color: var(--colore-testo);
+  color: var(--colore-testo-attenuato);
 }
 
 /* ---------- Porte (home, ingresso) ----------
@@ -242,21 +256,28 @@ a:hover, a:focus {
   }
 }
 
+/* Stessa dimensione per tutti gli otto, su ogni larghezza di schermo: non si
+   adattano più al testo. Altezza fissa (non min-height, per essere davvero
+   identica anche quando l'etichetta più corta sta su una riga sola e quella
+   più lunga va a capo su due) tarata sul caso peggiore a 2 righe; il testo
+   si centra verticalmente dentro. */
 .porta-btn {
   font: inherit;
   cursor: pointer;
   width: 100%;
-  display: block;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
   text-align: left;
   text-decoration: none;
   background: var(--colore-superficie);
   border: 1px solid var(--colore-bordo);
   border-radius: 10px;
-  padding: 0.55rem 0.7rem;
+  padding: 0.4rem 0.7rem;
   font-size: 0.86rem;
   font-weight: 600;
   color: var(--colore-testo);
-  line-height: 1.25;
+  line-height: 1.2;
   transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
 }
 
@@ -755,17 +776,19 @@ a:hover, a:focus {
 
 /* ---------- Footer ---------- */
 
+/* Nessun testo per ora (decisione Damiano 04/08): senza contenuto, un bordo
+   sopra il vuoto leggerebbe come una pagina troncata — non un piede pulito.
+   Al suo posto la stessa linea tricolore della fascia in testa, capovolta
+   in chiusura: bookend visivo, non un'introduzione a niente. Quando il
+   testo tornerà, .container + <p> rientrano dentro <footer> senza toccare
+   questa regola. */
 .sito-footer {
-  border-top: 1px solid var(--colore-bordo);
-  padding: 1.75rem 0 2.75rem;
-  color: var(--colore-testo-attenuato);
-  font-size: 0.88rem;
-  margin-top: 1.5rem;
-}
-
-.footer-firma {
-  display: block;
-  margin-top: 0.35rem;
+  height: 4px;
+  background-image: linear-gradient(90deg, var(--colore-accento) 0%, var(--colore-accento) 33%, var(--colore-calore-chiaro) 33%, var(--colore-calore-chiaro) 66%, var(--colore-accento) 66%);
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin-top: 2.5rem;
 }
 
 /* ---------- Accessibilità ---------- */

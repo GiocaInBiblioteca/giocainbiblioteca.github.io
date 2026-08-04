@@ -1,0 +1,150 @@
+/* Foglio etichette da coperchio stampabili — A4, griglia fitta (5 colonne).
+   Vanilla CSS, autonomo (non dipende da style.css) per restare semplice
+   da aprire e stampare da qualunque postazione, anche offline.
+
+   Diverso dal cartellino da scaffale (cartellino.css): qui il formato è
+   piccolo apposta per stare sul coperchio di una scatola, non su uno
+   scaffale. Titolo + domanda/QR/istruzione, non titolo+meta+descrizione. */
+
+:root {
+  --colore-testo: #1c1e21;
+  --colore-testo-attenuato: #4a4f57;
+  --colore-bordo: #b9b4a6;
+  --colore-accento: #1f6f5c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--colore-testo);
+  background: #f2f0ea;
+}
+
+.barra-schermo {
+  background: #fff8dc;
+  border-bottom: 2px solid #e0c96a;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+.barra-schermo p {
+  margin: 0.25rem 0;
+}
+
+.griglia-etichette {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 210mm;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.etichetta-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* forza una nuova pagina ogni 25 etichette (5 colonne x 5 righe) */
+.etichetta-item:nth-child(25n) {
+  break-after: page;
+  page-break-after: always;
+}
+
+.etichetta {
+  border: 1px dashed var(--colore-bordo);
+  margin: 2.5mm;
+  padding: 2mm 1mm;
+  height: 46mm;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Titolo: serve a non scambiare l'etichetta di una scatola con quella di
+   un'altra mentre si ritaglia — 48 etichette sono quasi identiche a colpo
+   d'occhio senza. Ha la sua larghezza (quella della card), non quella del
+   QR: è un'aggiunta pratica, non fa parte del blocco domanda/QR/istruzione
+   che Damiano vuole allineato al codice. */
+.etichetta-titolo {
+  margin: 0 0 1.3mm;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--colore-accento);
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Il nucleo — domanda, QR, istruzione — è largo esattamente quanto il QR
+   (24mm, vedi .etichetta-qr): le tre righe stanno nella stessa colonna,
+   non testo centrato sopra un quadrato di un'altra misura. */
+.etichetta-nucleo {
+  width: 24mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.etichetta-domanda,
+.etichetta-istruzione {
+  margin: 0;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--colore-testo);
+}
+
+/* Corpo calibrato per rendering reale (misurato con Chrome headless, non a
+   occhio) perché la riga arrivi il più vicino possibile ai bordi del QR
+   sotto: 20 caratteri "Com'è questo gioco?" a questo corpo restituiscono
+   ~90.5px, il QR a 24mm ne misura ~90.7px — differenza sotto il millimetro. */
+.etichetta-domanda {
+  font-size: 0.56rem;
+  margin-bottom: 0.9mm;
+}
+
+.etichetta-qr {
+  width: 24mm;
+  height: 24mm;
+  display: block;
+}
+
+/* Stesso corpo della domanda: a parità di font-size "Puntaci il telefono."
+   (20 caratteri, ma lettere più strette: 4 "i", 2 "t") rende più corta di
+   circa 3mm nella stessa colonna — ingrandirla fino a combaciare al pixel
+   avrebbe richiesto stiracchiare lo spazio tra le lettere, l'effetto esatto
+   che Damiano ha chiesto di evitare. Resta centrata nella stessa colonna
+   della domanda e del QR: il compromesso è dichiarato, non un errore. */
+.etichetta-istruzione {
+  font-size: 0.56rem;
+  margin-top: 0.9mm;
+  color: var(--colore-testo-attenuato);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .etichetta {
+    border-style: solid;
+  }
+
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+}
