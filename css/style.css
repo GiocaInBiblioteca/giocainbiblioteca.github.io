@@ -1,0 +1,790 @@
+/* Gioca in Biblioteca — catalogo giochi da tavolo
+   Vanilla CSS, mobile-first, nessuna dipendenza esterna.
+   Font self-hosted in fonts.css (Fraunces per i titoli, DM Sans per il corpo);
+   fallback di sistema se per qualunque motivo non caricano. */
+
+:root {
+  --colore-testo: #2b2013;
+  --colore-testo-attenuato: #5b4c38;
+  --colore-sfondo: #f7f2e7;
+  --colore-superficie: #fffdfa;
+  --colore-bordo: #e2d8c3;
+  --colore-accento: #1f6f5c;
+  --colore-accento-scuro: #14493c;
+  --colore-calore: #9c4415;
+  --colore-calore-chiaro: #e08a4f;
+
+  /* Un'unica tinta (verde-blu) in quattro intensità crescenti per i 4 livelli.
+     Niente semaforo: l'impegno non è un difetto, è una quantità. */
+  --livello-1: #cfe3dc;
+  --livello-2: #8fbfae;
+  --livello-3: #4f9880;
+  --livello-4: #1f6f5c;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-corpo: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius: 14px;
+  --ombra: 0 2px 6px rgba(43, 32, 19, 0.07), 0 1px 2px rgba(43, 32, 19, 0.06);
+  --ombra-hover: 0 10px 20px rgba(43, 32, 19, 0.12), 0 2px 6px rgba(43, 32, 19, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-corpo);
+  color: var(--colore-testo);
+  background: var(--colore-sfondo);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--colore-accento-scuro);
+}
+
+a:hover, a:focus {
+  color: var(--colore-accento);
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Header ---------- */
+
+.sito-header {
+  background: var(--colore-superficie);
+  border-bottom: 3px solid var(--colore-bordo);
+  background-image: linear-gradient(90deg, var(--colore-accento) 0%, var(--colore-accento) 33%, var(--colore-calore-chiaro) 33%, var(--colore-calore-chiaro) 66%, var(--colore-accento) 66%);
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding: 2.1rem 0 1.75rem;
+}
+
+/* La fascia porta l'identità del sito: dado + titolo, e sotto — nella
+   stessa fascia — la biblioteca. Tutto centrato, un solo blocco compatto,
+   non un flusso a bandiera. */
+.sito-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.sito-header .dado-icona {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  color: var(--colore-accento);
+}
+
+.sito-header h1 {
+  margin: 0;
+  font-size: 1.55rem;
+}
+
+.sito-header .sito-header-link {
+  text-decoration: none;
+  color: var(--colore-testo);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Riga 2 della fascia: sottotitolo + biblioteca. Su schermo stretto le due
+   informazioni stanno su un'unica riga separate da un punto, per non
+   spendere tre righe piene di fascia su ogni pagina (57 pagine, mobile-first
+   è dove costa di più). Da 640px in su, con più respiro, tornano due righe
+   distinte con gerarchia tipografica più marcata. */
+.sito-header-riga2 {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: 0.4em;
+  row-gap: 0.1rem;
+}
+
+.sito-header-sub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--colore-testo-attenuato);
+}
+
+.sito-header-biblioteca {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--colore-testo-attenuato);
+  opacity: 0.8;
+}
+
+.sito-header-biblioteca::before {
+  content: "· ";
+}
+
+@media (min-width: 640px) {
+  .sito-header-riga2 {
+    flex-direction: column;
+    row-gap: 0.15rem;
+  }
+
+  .sito-header-sub {
+    font-size: 0.98rem;
+  }
+
+  .sito-header-biblioteca {
+    font-size: 0.88rem;
+  }
+
+  .sito-header-biblioteca::before {
+    content: "";
+  }
+}
+
+.breadcrumb {
+  font-size: 0.92rem;
+  margin: 1.5rem 0 0;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ---------- Pagina porta (categoria) ----------
+   Una delle otto pagine in cui è finita la home di ieri: titolo (l'etichetta
+   già letta sul pulsante) + la frase d'arrivo, poi filtri e griglia. */
+
+.categoria-intestazione {
+  margin: 1.4rem 0 0;
+}
+
+.categoria-titolo {
+  font-size: 1.7rem;
+  margin: 0 0 0.5rem;
+  color: var(--colore-testo);
+}
+
+.categoria-intro {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1.05rem;
+  color: var(--colore-testo-attenuato);
+}
+
+/* ---------- Accoglienza (home, ingresso) ----------
+   Fuori dalla fascia bianca, sopra i pulsanti: la domanda a cui i pulsanti
+   rispondono. Centrata e respirata, come un piccolo sottotitolo — non un
+   paragrafo buttato a sinistra nel flusso. Due righe di un unico blocco
+   (seconda riga = continuazione). */
+
+.accoglienza {
+  padding: 1.75rem 0 0.25rem;
+  text-align: center;
+}
+
+.accoglienza p {
+  margin: 0 auto;
+  max-width: 46ch;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--colore-testo);
+}
+
+/* ---------- Porte (home, ingresso) ----------
+   Otto modi in cui una persona si presenta in biblioteca. Corto sulla cella
+   (etichetta + numero), caldo appena dentro (la frase intera vive in
+   #porta-frase, sopra il catalogo). Griglia 2x4: deve stare nella prima
+   schermata di un telefono, senza scorrere — vincolo duro, non un'idea. */
+
+.porte {
+  padding: 1.1rem 0 0.5rem;
+}
+
+.porte-griglia {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.55rem;
+}
+
+@media (min-width: 640px) {
+  .porte-griglia {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.porta-btn {
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  background: var(--colore-superficie);
+  border: 1px solid var(--colore-bordo);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--colore-testo);
+  line-height: 1.25;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.porta-btn:hover, .porta-btn:focus {
+  border-color: var(--colore-accento);
+  box-shadow: var(--ombra);
+  color: var(--colore-testo);
+}
+
+.porta-btn .porta-numero {
+  color: var(--colore-accento);
+  font-weight: 700;
+}
+
+.porta-btn--tutti {
+  background: var(--colore-accento);
+  border-color: var(--colore-accento);
+  color: #fff;
+}
+
+.porta-btn--tutti .porta-numero {
+  color: #fff;
+}
+
+.porta-btn--tutti:hover, .porta-btn--tutti:focus {
+  color: #fff;
+}
+
+/* Frase d'arrivo: compare in cima al catalogo solo dopo il clic su una
+   porta, sparisce del tutto (non un div vuoto) quando non c'è nulla da dire. */
+.porta-frase {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--colore-accento-scuro);
+  margin: 1.75rem 0 0.5rem;
+}
+
+.porta-frase:empty {
+  display: none;
+  margin: 0;
+}
+
+/* ---------- Intro editoriale (home) ----------
+   Richiudibile, chiusa di default: la prima schermata deve mostrare che il
+   catalogo è semplice, la spiegazione sta qui sotto per chi la cerca. Stesso
+   pattern visivo del <details> tecnico nella scheda gioco. */
+
+.intro {
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--radius);
+  background: var(--colore-superficie);
+  padding: 0.25rem 1.25rem;
+  margin: 2rem 0 1.75rem;
+}
+
+.intro summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 1rem 0;
+  list-style: none;
+  color: var(--colore-accento-scuro);
+}
+
+.intro summary::-webkit-details-marker {
+  display: none;
+}
+
+.intro summary::before {
+  content: "▸ ";
+  color: var(--colore-accento);
+}
+
+.intro[open] summary::before {
+  content: "▾ ";
+}
+
+.intro-corpo {
+  padding-bottom: 0.75rem;
+}
+
+.intro h2 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.6rem;
+  color: var(--colore-accento-scuro);
+}
+
+.intro h2:first-child {
+  margin-top: 0;
+}
+
+.intro p {
+  margin: 0 0 1rem;
+  color: var(--colore-testo-attenuato);
+  max-width: 62ch;
+  font-size: 1.02rem;
+}
+
+.intro p em {
+  color: var(--colore-calore);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.intro p strong {
+  color: var(--colore-testo);
+}
+
+/* ---------- Gruppi per livello (home) ----------
+   Il livello di un gioco lo dice il posto in cui il gioco si trova: niente
+   più legenda a parte in cima alla pagina, la frase spiega il gruppo dove
+   serve, appena sopra i suoi giochi. */
+
+.livello-gruppo {
+  margin: 2.5rem 0;
+}
+
+.livello-gruppo:first-of-type {
+  margin-top: 0;
+}
+
+.livello-gruppo-intestazione {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 0.3rem;
+}
+
+.livello-gruppo-intestazione .dots {
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+}
+
+.livello-gruppo-titolo {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--colore-accento-scuro);
+}
+
+.livello-gruppo-frase {
+  margin: 0 0 1.25rem;
+  color: var(--colore-testo-attenuato);
+  font-size: 0.95rem;
+  max-width: 62ch;
+}
+
+/* ---------- Dots di livello (componente riusato ovunque) ---------- */
+
+.dots {
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.dot {
+  color: var(--colore-bordo);
+}
+
+.livello-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--colore-sfondo);
+  border: 1px solid var(--colore-bordo);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+}
+
+/* colori a scalare per livello, sempre accompagnati dal testo/etichetta,
+   mai unico indicatore: il livello si legge anche in bianco e nero */
+.livello-al-volo .dot-on { color: var(--livello-1); }
+.livello-da-soli .dot-on { color: var(--livello-2); }
+.livello-con-guida .dot-on { color: var(--livello-3); }
+.livello-da-serata .dot-on { color: var(--livello-4); }
+
+/* ---------- Filtri (pagine porta) ----------
+   Una barra sola, sottile, non due riquadri grandi: deve leggersi a colpo
+   d'occhio come "sono filtri", non come una sezione di contenuto. */
+
+.filtri {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.15rem;
+  margin: 1.5rem 0 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--radius);
+  background: var(--colore-superficie);
+}
+
+.filtri-gruppo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filtri-etichetta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--colore-testo-attenuato);
+}
+
+.filtri-opzioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filtro-btn {
+  font: inherit;
+  cursor: pointer;
+  background: var(--colore-sfondo);
+  border: 1px solid var(--colore-bordo);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.filtro-btn:hover {
+  border-color: var(--colore-accento);
+}
+
+.filtro-btn[aria-pressed="true"] {
+  background: var(--colore-accento);
+  border-color: var(--colore-accento);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: var(--ombra);
+}
+
+.filtro-reset {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: var(--colore-calore);
+  padding: 0.4rem 0;
+  margin-left: auto;
+  font-weight: 500;
+  font-size: 0.82rem;
+}
+
+.contatore-risultati {
+  font-size: 0.92rem;
+  color: var(--colore-testo-attenuato);
+  margin: 0.5rem 0 1.25rem;
+}
+
+/* ---------- Griglia giochi ---------- */
+
+.griglia-giochi {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+}
+
+@media (min-width: 640px) {
+  .griglia-giochi {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .griglia-giochi {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gioco-card {
+  display: block;
+  background: var(--colore-superficie);
+  border: 1px solid var(--colore-bordo);
+  border-left: 5px solid var(--colore-bordo);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--ombra);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-left-color 0.15s ease;
+}
+
+/* la barra colorata a sinistra è un ritmo visivo in più sulla griglia,
+   non l'indicatore del livello: badge + pallini restano la fonte, sempre presenti */
+.gioco-card-wrap[data-livello="al-volo"] .gioco-card { border-left-color: var(--livello-1); }
+.gioco-card-wrap[data-livello="da-soli"] .gioco-card { border-left-color: var(--livello-2); }
+.gioco-card-wrap[data-livello="con-guida"] .gioco-card { border-left-color: var(--livello-3); }
+.gioco-card-wrap[data-livello="da-serata"] .gioco-card { border-left-color: var(--livello-4); }
+
+.gioco-card:hover, .gioco-card:focus {
+  transform: translateY(-3px);
+  box-shadow: var(--ombra-hover);
+}
+
+.gioco-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.15rem;
+  color: var(--colore-testo);
+}
+
+.gioco-card .meta-riga {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--colore-testo-attenuato);
+}
+
+.gioco-card .card-desc {
+  font-size: 0.92rem;
+  color: var(--colore-testo-attenuato);
+  margin: 0;
+}
+
+/* ---------- Pagina di dettaglio gioco ---------- */
+
+.scheda-gioco {
+  padding: 1.75rem 0 3.5rem;
+  max-width: 68ch;
+}
+
+.scheda-titolo {
+  font-size: 2rem;
+  margin: 0.35rem 0 0.9rem;
+  color: var(--colore-testo);
+}
+
+.scheda-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.giocatori-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--colore-sfondo);
+  border: 1px solid var(--colore-bordo);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+}
+
+.scheda-livello-frase {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--colore-testo-attenuato);
+  margin: 0 0 1.25rem;
+  max-width: 62ch;
+}
+
+.scheda-descrizione {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  margin: 0 0 1.4rem;
+}
+
+/* Approfondimento (solo sulle schede che ne hanno uno): attacco tipografico
+   diverso dalla breve — eyebrow in maiuscolo + testo in serif — con un
+   divisore sopra. Non è una nota a piè di pagina: font più grande e colore
+   pieno, non attenuato. */
+.scheda-approfondimento {
+  border-top: 1px solid var(--colore-bordo);
+  padding-top: 1.35rem;
+  margin: 0 0 1.75rem;
+}
+
+.scheda-approfondimento-eyebrow {
+  font-family: var(--font-corpo);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--colore-accento);
+  margin: 0 0 0.65rem;
+}
+
+.scheda-approfondimento p:not(.scheda-approfondimento-eyebrow) {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--colore-testo);
+  margin: 0;
+  max-width: 66ch;
+}
+
+/* Nota "due scatole distinte" — solo sulla scheda che ne ha bisogno
+   (Spirit of the Forest). Non sostituisce la descrizione, la affianca:
+   attacco visivo diverso (bordo pieno, non solo a sinistra) per non
+   confonderla con l'in-chiaro. */
+.scheda-due-scatole {
+  background: #fdf3ea;
+  border: 1px solid var(--colore-calore-chiaro);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.5rem;
+}
+
+.scheda-due-scatole p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.scheda-due-scatole strong {
+  color: var(--colore-calore);
+}
+
+.tipologia-chiaro {
+  background: var(--colore-superficie);
+  border-left: 4px solid var(--colore-accento);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.05rem 1.25rem;
+  margin: 0 0 1.75rem;
+  box-shadow: var(--ombra);
+}
+
+.tipologia-chiaro p {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+/* Sezione tecnica, richiudibile: chi non conosce il gergo non lo incontra,
+   chi lo cerca lo trova subito sotto. */
+.dettagli-tecnici {
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--radius);
+  padding: 0.25rem 1.25rem;
+  margin: 1.75rem 0;
+  background: var(--colore-superficie);
+}
+
+.dettagli-tecnici summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.95rem 0;
+  list-style: none;
+  color: var(--colore-testo-attenuato);
+}
+
+.dettagli-tecnici summary::-webkit-details-marker {
+  display: none;
+}
+
+.dettagli-tecnici summary::before {
+  content: "▸ ";
+  color: var(--colore-accento);
+}
+
+.dettagli-tecnici[open] summary::before {
+  content: "▾ ";
+}
+
+.dettagli-tecnici h3 {
+  font-size: 0.9rem;
+  font-family: var(--font-corpo);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--colore-testo-attenuato);
+  margin: 1.1rem 0 0.45rem;
+}
+
+.dettagli-tecnici .tipologia-tecnica {
+  margin: 0 0 1rem;
+}
+
+.dettagli-tecnici .componenti {
+  margin: 0 0 1rem;
+  color: var(--colore-testo-attenuato);
+}
+
+.link-torna {
+  display: inline-block;
+  margin-top: 1.1rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--colore-calore);
+}
+
+/* ---------- Footer ---------- */
+
+.sito-footer {
+  border-top: 1px solid var(--colore-bordo);
+  padding: 1.75rem 0 2.75rem;
+  color: var(--colore-testo-attenuato);
+  font-size: 0.88rem;
+  margin-top: 1.5rem;
+}
+
+.footer-firma {
+  display: block;
+  margin-top: 0.35rem;
+}
+
+/* ---------- Accessibilità ---------- */
+
+:focus-visible {
+  outline: 3px solid var(--colore-accento);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
