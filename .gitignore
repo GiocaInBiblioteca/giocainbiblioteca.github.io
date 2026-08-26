@@ -1,0 +1,4 @@
+# artefatti temporanei
+*.pyc
+__pycache__/
+.DS_Store

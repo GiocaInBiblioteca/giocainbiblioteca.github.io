@@ -1,0 +1,637 @@
+{
+ "Bloom Town": {
+  "file": "bloom-town.jpg",
+  "slug": "bloom-town",
+  "url": "https://www.uplay.it/storage/314541/conversions/bloom-town-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Meepleland": {
+  "file": "meeple-land.jpg",
+  "slug": "meeple-land",
+  "url": "fornita da Damiano (team inbox, 25/08)",
+  "dim": [
+   500,
+   500
+  ],
+  "come": "fornita da Damiano"
+ },
+ "Tang Garden": {
+  "file": "tang-garden.jpg",
+  "slug": "tang-garden",
+  "url": "https://www.uplay.it/storage/315368/conversions/tang-garden-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Hippocrates": {
+  "file": "hippocrates.jpg",
+  "slug": "hippocrates",
+  "url": "https://www.uplay.it/storage/324521/conversions/hippocrates-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Rune Stones": {
+  "file": "rune-stones.jpg",
+  "slug": "rune-stones",
+  "url": "https://www.uplay.it/storage/323675/conversions/rune-stones-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Visconti del Regno Occidentale": {
+  "file": "visconti-del-regno-occidentale.jpg",
+  "slug": "visconti-del-regno-occidentale",
+  "url": "https://www.uplay.it/storage/313655/conversions/visconti-del-regno-occidentale-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Dungeonology": {
+  "file": "dungeonology.jpg",
+  "slug": "dungeonology",
+  "url": "fornita da Damiano (team inbox, 25/08)",
+  "dim": [
+   500,
+   500
+  ],
+  "come": "fornita da Damiano"
+ },
+ "New York Zoo": {
+  "file": "new-york-zoo.jpg",
+  "slug": "new-york-zoo",
+  "url": "https://www.uplay.it/storage/309358/conversions/new-york-zoo-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "The Hunger": {
+  "file": "the-hunger.jpg",
+  "slug": "the-hunger",
+  "url": "https://www.uplay.it/storage/311631/conversions/the-hunger-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Woodcraft": {
+  "file": "woodcraft.jpg",
+  "slug": "woodcraft",
+  "url": "https://www.uplay.it/storage/310856/conversions/woodcraft-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Sock Monsters": {
+  "file": "sock-monsters.jpg",
+  "slug": "sock-monsters",
+  "url": "https://www.uplay.it/storage/330432/conversions/sock-monsters-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Railroad Ink Rosso": {
+  "file": "railroad-ink-rosso.jpg",
+  "come": "fornita dalla biblioteca, 26/08"
+ },
+ "Railroad Ink Blu": {
+  "file": "railroad-ink-blu.jpg",
+  "come": "fornita dalla biblioteca, 26/08"
+ },
+ "Lo Scatto Perfetto": {
+  "file": "lo-scatto-perfetto.jpg",
+  "slug": "lo-scatto-perfetto",
+  "url": "https://www.uplay.it/storage/319403/conversions/lo-scatto-perfetto-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "MindUp!": {
+  "file": "mind-up.jpg",
+  "slug": "mind-up",
+  "url": "fornita da Damiano (team inbox, 25/08)",
+  "dim": [
+   500,
+   500
+  ],
+  "come": "fornita da Damiano"
+ },
+ "Hats": {
+  "file": "hats.jpg",
+  "slug": "hats",
+  "url": "https://www.uplay.it/storage/311088/conversions/hats-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Sobek 2 giocatori": {
+  "file": "sobek-2-giocatori.jpg",
+  "slug": "sobek-2-giocatori",
+  "url": "https://www.uplay.it/storage/330554/conversions/sobek-2-giocatori-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Gasha": {
+  "file": "gasha.jpg",
+  "slug": "gasha",
+  "url": "https://www.uplay.it/storage/323141/conversions/gasha-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Corinth": {
+  "file": "corinth.jpg",
+  "slug": "corinth",
+  "url": "https://www.uplay.it/storage/343197/conversions/corinth-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Orbis": {
+  "file": "orbis.jpg",
+  "slug": "orbis",
+  "url": "https://www.uplay.it/storage/331081/conversions/orbis-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Conspiracy": {
+  "file": "conspiracy.jpg",
+  "slug": "conspiracy",
+  "url": "https://www.uplay.it/storage/388943/conversions/conspiracy-listing.webp",
+  "dim": [
+   160,
+   160
+  ]
+ },
+ "Yokai": {
+  "file": "yokai.jpg",
+  "slug": "yokai",
+  "url": "https://www.uplay.it/storage/331490/conversions/yokai-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Wild Space": {
+  "file": "wild-space.jpg",
+  "slug": "wild-space",
+  "url": "https://www.uplay.it/storage/322017/conversions/wild-space-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Pandemic Reazione Rapida": {
+  "file": "pandemic-reazione-rapida.jpg",
+  "slug": "pandemic-reazione-rapida",
+  "url": "https://www.uplay.it/storage/315938/conversions/pandemic-reazione-rapida-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "CocoRido All'Arrembaggio": {
+  "file": "coco-rido-junior-all-arrembaggio.jpg",
+  "slug": "coco-rido-junior-all-arrembaggio",
+  "url": "fornita da Damiano (team inbox, 25/08)",
+  "dim": [
+   500,
+   500
+  ],
+  "come": "fornita da Damiano"
+ },
+ "Spirit of the Forest": {
+  "file": "spirits-of-the-forest.jpg",
+  "slug": "spirits-of-the-forest",
+  "url": "https://www.uplay.it/storage/331097/conversions/spirits-of-the-forest-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Draftosaurus": {
+  "file": "draftosaurus.jpg",
+  "slug": "draftosaurus",
+  "url": "https://www.uplay.it/storage/311412/conversions/draftosaurus-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Welcome to New Las Vegas": {
+  "file": "welcome-to-new-las-vegas.jpg",
+  "slug": "welcome-to-new-las-vegas",
+  "url": "https://www.uplay.it/storage/320181/conversions/welcome-to-new-las-vegas-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Villagers": {
+  "file": "villagers-costruisci-il-tuo-villaggio.jpg",
+  "slug": "villagers-costruisci-il-tuo-villaggio",
+  "url": "fornita da Damiano (team inbox, 25/08)",
+  "dim": [
+   500,
+   500
+  ],
+  "come": "fornita da Damiano"
+ },
+ "21 Giochi Minuti": {
+  "file": "21-giochi-minuti.jpg",
+  "slug": "21-giochi-minuti",
+  "url": "https://www.uplay.it/storage/314275/conversions/21-giochi-minuti-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Once Upon a Castle": {
+  "file": "once-upon-a-castle.jpg",
+  "slug": "once-upon-a-castle",
+  "url": "https://www.uplay.it/storage/315619/conversions/once-upon-a-castle-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "NobiNobi GDR Spada": {
+  "file": "nobi-nobi-spada-gdr.jpg",
+  "slug": "nobi-nobi-spada-gdr",
+  "url": "https://www.uplay.it/storage/358687/conversions/nobi-nobi-spada-gdr-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "NobiNobi GDR Magia": {
+  "file": "nobi-nobi-magia-gdr.jpg",
+  "slug": "nobi-nobi-magia-gdr",
+  "url": "https://www.uplay.it/storage/341781/conversions/nobi-nobi-magia-gdr-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Machi Koro": {
+  "file": "machi-koro-fatevi-un-giro-in-citta.jpg",
+  "slug": "machi-koro-fatevi-un-giro-in-citta",
+  "url": "fornita da Damiano (team inbox, 25/08)",
+  "dim": [
+   500,
+   500
+  ],
+  "come": "fornita da Damiano"
+ },
+ "Florenza Dice Game": {
+  "file": "florenza-dice-game.jpg",
+  "slug": "florenza-dice-game",
+  "url": "https://www.uplay.it/storage/331439/conversions/florenza-dice-game-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Azul Summer Pavillion": {
+  "file": "azul-summer-pavilion-edizione-italiana.jpg",
+  "slug": "azul-summer-pavilion-edizione-italiana",
+  "url": "https://www.uplay.it/storage/331484/conversions/azul-summer-pavilion-edizione-italiana-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Oddville": {
+  "file": "oddville.jpg",
+  "slug": "oddville",
+  "url": "https://www.uplay.it/storage/348954/conversions/oddville-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Era Il Medioevo": {
+  "file": "era-il-medioevo.jpg",
+  "slug": "era-il-medioevo",
+  "url": "https://www.uplay.it/storage/317326/conversions/era-il-medioevo-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Santiago De Cuba": {
+  "file": "santiago-de-cuba.jpg",
+  "slug": "santiago-de-cuba",
+  "url": "https://www.uplay.it/storage/351403/conversions/santiago-de-cuba-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Aquatica": {
+  "file": "aquatica.jpg",
+  "slug": "aquatica",
+  "url": "https://www.uplay.it/storage/421246/conversions/aquatica-listing.webp",
+  "dim": [
+   160,
+   160
+  ]
+ },
+ "Meeples and Monsters": {
+  "file": "meeples-amp-monsters.jpg",
+  "slug": "meeples-amp-monsters",
+  "url": "https://www.uplay.it/storage/356085/conversions/meeples-amp-monsters-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Watergate": {
+  "file": "watergate.jpg",
+  "slug": "watergate",
+  "url": "https://www.uplay.it/storage/308767/conversions/watergate-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Zombie Kidz Evolution": {
+  "file": "zombie-kidz-evolution.jpg",
+  "slug": "zombie-kidz-evolution",
+  "url": "https://www.uplay.it/storage/323863/conversions/zombie-kidz-evolution-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Champions!": {
+  "file": "champions.jpg",
+  "slug": "champions",
+  "url": "https://www.uplay.it/storage/432231/conversions/champions-listing.webp",
+  "dim": [
+   160,
+   160
+  ]
+ },
+ "Momiji": {
+  "file": "momiji.jpg",
+  "slug": "momiji",
+  "url": "https://www.uplay.it/storage/324404/conversions/momiji-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Kingdomino": {
+  "file": "kingdomino.jpg",
+  "slug": "kingdomino",
+  "url": "https://www.uplay.it/storage/309034/conversions/kingdomino-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Snow Time": {
+  "file": "snow-time.jpg",
+  "slug": "snow-time",
+  "url": "https://www.uplay.it/storage/332305/conversions/snow-time-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "King of Tokyo": {
+  "file": "king-of-tokyo.jpg",
+  "come": "fornita dalla biblioteca, 26/08"
+ },
+ "Micromacro : Crime city. True detective": {
+  "file": "micromacro-crime-city-edizione-italiana.jpg",
+  "slug": "micromacro-crime-city-edizione-italiana",
+  "url": "https://www.uplay.it/storage/309592/conversions/micromacro-crime-city-edizione-italiana-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Bicchieri sprint": {
+  "file": "bicchieri-sprint.jpg",
+  "slug": "bicchieri-sprint",
+  "url": "https://www.uplay.it/storage/412771/conversions/bicchieri-sprint-listing.webp",
+  "dim": [
+   160,
+   160
+  ]
+ },
+ "Just one : a te la scelta, fai la differenza!": {
+  "file": "just-one.jpg",
+  "slug": "just-one",
+  "url": "https://www.uplay.it/storage/315169/conversions/just-one-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Furbi come volpi : un caso per galline detective!": {
+  "file": "furbi-come-volpi.jpg",
+  "slug": "furbi-come-volpi",
+  "url": "https://www.uplay.it/storage/317662/conversions/furbi-come-volpi-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Bananagrams : il gioco di parole veloce": {
+  "file": "bananagrams.jpg",
+  "slug": "bananagrams",
+  "url": "https://www.uplay.it/storage/310584/conversions/bananagrams-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Imagine family : assemblate, animate, indovinate": {
+  "file": "imagine-family.jpg",
+  "slug": "imagine-family",
+  "url": "https://www.uplay.it/storage/330225/conversions/imagine-family-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Qwirkle": {
+  "file": "qwirkle.jpg",
+  "slug": "qwirkle",
+  "url": "https://www.uplay.it/storage/308586/conversions/qwirkle-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Bang!": {
+  "file": "bang.jpg",
+  "slug": "bang",
+  "url": "https://www.uplay.it/storage/540688/conversions/bang-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Consequences. Giorni d'oggi": {
+  "file": "consequences-giorni-doggi.jpg",
+  "slug": "consequences-giorni-doggi",
+  "url": "https://www.uplay.it/storage/458551/conversions/consequences-giorni-doggi-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Storie nere : 50 misteri da risolvere": {
+  "file": "storie-nere-50-misteri-da-risolvere.jpg",
+  "come": "fornita dalla biblioteca, 26/08"
+ },
+ "Storie nere : 50 misteri da risolvere vol. 2": {
+  "file": "storie-nere-50-misteri-da-risolvere-vol-2.jpg",
+  "come": "fornita dalla biblioteca, 26/08"
+ },
+ "Farmerstein : una pazza sfida vegetale": {
+  "file": "farmerstein.jpg",
+  "slug": "farmerstein",
+  "url": "https://www.uplay.it/storage/330556/conversions/farmerstein-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Dobble classic": {
+  "file": "dobble-classic.jpg",
+  "come": "fornita dalla biblioteca, 26/08"
+ },
+ "Pozioni esplosive": {
+  "file": "pozioni-esplosive.jpg",
+  "slug": "pozioni-esplosive",
+  "url": "https://www.uplay.it/storage/309356/conversions/pozioni-esplosive-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Funky gallo : il gioco di carte": {
+  "file": "funky-gallo.jpg",
+  "slug": "funky-gallo",
+  "url": "https://www.uplay.it/storage/315233/conversions/funky-gallo-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Smimando : un party game esilarante!": {
+  "file": "smimando.jpg",
+  "slug": "smimando",
+  "url": "https://www.uplay.it/storage/365331/conversions/smimando-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Radio Victory : vite e ruoli in gioco nella Resistenza Italiana": {
+  "file": "radio-victory.jpg",
+  "slug": "radio-victory",
+  "url": "https://www.uplay.it/storage/444025/conversions/radio-victory-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "La corsa dei colori : il gioco di percorso in cui non serve contare": {
+  "file": "la-corsa-dei-colori.jpg",
+  "slug": "la-corsa-dei-colori",
+  "url": "https://www.uplay.it/storage/450517/conversions/la-corsa-dei-colori-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Taco party torta pacco pizza": {
+  "file": "taco-party-torta-pacco-pizza.jpg",
+  "slug": "taco-party-torta-pacco-pizza",
+  "url": "https://www.uplay.it/storage/321245/conversions/taco-party-torta-pacco-pizza-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Speedy word : nomi, cose, citt ...": {
+  "file": "speedy-words-nomi-cose-citta.jpg",
+  "slug": "speedy-words-nomi-cose-citta",
+  "url": "https://www.uplay.it/storage/324576/conversions/speedy-words-nomi-cose-citta-listing.webp",
+  "dim": [
+   400,
+   400
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Fino a prova contraria : la collana del cielo stellato": {
+  "file": "fino-a-prova-contraria-la-collana-del-cielo-stellato.jpg",
+  "slug": "fino-a-prova-contraria-la-collana-del-cielo-stellato",
+  "url": "https://www.uplay.it/storage/427216/conversions/fino-a-prova-contraria-la-collana-del-cielo-stellato-listing.webp",
+  "dim": [
+   160,
+   160
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Stampfarm": {
+  "file": "stampfarm.jpg",
+  "slug": "stampfarm",
+  "url": "https://www.uplay.it/storage/310255/conversions/stampfarm-listing.webp",
+  "dim": [
+   400,
+   400
+  ]
+ },
+ "Lost in adventure : il labirinto di Dedalo": {
+  "file": "lost-in-adventure-il-labirinto-di-dedalo.jpg",
+  "slug": "lost-in-adventure-il-labirinto-di-dedalo",
+  "url": "https://www.uplay.it/storage/427217/conversions/lost-in-adventure-il-labirinto-di-dedalo-listing.webp",
+  "dim": [
+   160,
+   160
+  ],
+  "come": "scelta di Damiano"
+ },
+ "Zefiria": {
+  "file": "zefiria.jpg",
+  "slug": "zefiria",
+  "url": "fornita da Damiano (team inbox, 25/08)",
+  "dim": [
+   500,
+   500
+  ],
+  "come": "fornita da Damiano"
+ }
+}
