@@ -446,13 +446,25 @@ GIOCHI_BIBLIOTECA_DIR = "/home/damiano/Progetti-Personali/giochi-biblioteca"
 #   Lotto 2, voce 3: a catalogo l'accento di "città" è perso e c'è un doppio
 #   spazio ("La citt  meccanica") — refuso già segnalato alla biblioteca,
 #   non corretto qui. Il testo installato non cita comunque il titolo.
-DESCRIZIONI_SCARNI_ALIAS = {
+DESCRIZIONI_SCARNI_ALIAS_LOTTO_02 = {
     "Destini Infiniti. La città meccanica": "Destini Infiniti. La citt  meccanica",
+}
+#   Lotto 3, voce 10: il titolo nel markdown è troncato ("Cala Il Sipario"),
+#   il titolo grezzo nel CSV prosegue con sottotitolo/due-punti multipli
+#   ("... : una nuova indagine per il Commissario Ricciardi : un gioco
+#   investigativo") — verificato carattere per carattere, non un refuso,
+#   solo un titolo lungo scritto per esteso solo nel CSV.
+DESCRIZIONI_SCARNI_ALIAS_LOTTO_03 = {
+    "Murder Party Pocket. Cala Il Sipario": (
+        "Murder Party Pocket. Cala Il Sipario : una nuova indagine per il "
+        "Commissario Ricciardi : un gioco investigativo"
+    ),
 }
 
 LOTTI_DESCRIZIONI = [
     (f"{GIOCHI_BIBLIOTECA_DIR}/lotti/lotto-01-descrizioni-penna.md", 20, {}),
-    (f"{GIOCHI_BIBLIOTECA_DIR}/lotti/lotto-02-descrizioni-penna.md", 20, DESCRIZIONI_SCARNI_ALIAS),
+    (f"{GIOCHI_BIBLIOTECA_DIR}/lotti/lotto-02-descrizioni-penna.md", 20, DESCRIZIONI_SCARNI_ALIAS_LOTTO_02),
+    (f"{GIOCHI_BIBLIOTECA_DIR}/lotti/lotto-03-descrizioni-penna.md", 20, DESCRIZIONI_SCARNI_ALIAS_LOTTO_03),
 ]
 
 
