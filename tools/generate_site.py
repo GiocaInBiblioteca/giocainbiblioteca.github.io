@@ -82,6 +82,16 @@ def stato_badge(g):
     )
 
 
+def stato_ribbon(g):
+    """Etichetta di stato sovrapposta alla copertina — versione griglia
+    (Direzione A, 26/08 sera, bozze/direzione-a-copertine.html v2): stesso
+    dato di stato_badge, markup diverso (nastro sulla copertina invece di
+    pillola nella riga meta). Uno dei quattro segnali che distinguono
+    «in biblioteca» da «sta arrivando», mai da solo — vedi CSS
+    .gioco-card[data-stato]."""
+    return f'<span class="gioco-card-ribbon">{esc(g["stato_label"])}</span>'
+
+
 HEAD = """<!DOCTYPE html>
 <html lang="it">
 <head>
@@ -92,7 +102,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="stylesheet" href="{css_path}css/fonts.css">
 <link rel="stylesheet" href="{css_path}css/style.css">
 </head>
-<body>
+<body{body_attrs}>
 <a class="skip-link" href="#contenuto">Vai al contenuto</a>
 <header class="sito-header">
   <div class="container">
@@ -108,12 +118,15 @@ HEAD = """<!DOCTYPE html>
       <h1>Gioca in Biblioteca</h1>
     </a>
     <p class="sito-header-riga2">
-      <span class="sito-header-sub">Catalogo giochi da tavolo</span>
-      <span class="sito-header-biblioteca">Biblioteca civica di Lecco «Uberto Pozzoli»</span>
+      <span class="sito-header-sub">Per scegliere un gioco fra quelli che trovi in biblioteca a Lecco</span>
     </p>
   </div>
 </header>
 """
+# Sottotitolo H2 (decisione Damiano 28/08): via la riga separata "Biblioteca
+# civica di Lecco «Uberto Pozzoli»", il nome della biblioteca entra nella
+# frase unica del sottotitolo. Riga condivisa da TUTTE le pagine (HEAD è un
+# solo template): non solo la home, coerente su tutto il sito per costruzione.
 
 FOOTER = """<footer class="sito-footer"></footer>
 </body>
@@ -159,32 +172,58 @@ LIVELLO_FRASE = {key: frase for key, _, _, frase in LEGENDA}
 # (id, filtro, valore, etichetta corta, frase d'arrivo). etichetta/frase con
 # {n} sostituito dal conteggio reale calcolato dai dati, mai un numero scritto
 # a mano — se i dati cambiano, l'etichetta cambia con loro.
+#
+# Struttura H2 (Damiano+Penna, 27-28/08): le 4 porte a filtro "livello" sono
+# le "grandi" (nomi presi verbatim da LEGENDA — sono la stessa scala, forma
+# lunga vs forma corta, vedi giochi-biblioteca/home-porte-penna.md), "tutti"
+# è la fascia a sé, le rimanenti sono le "piccole". Chi legge questa lista
+# per generare le pagine (build_category_page) non ha bisogno di saperlo:
+# quella distinzione la fa solo build_porte_html per la home. L'ordine qui
+# sotto è anche l'ordine di lettura in home: scala crescente, fascia, piccole.
 PORTE_DEF = [
     ("al-volo", "livello", "al-volo",
-     "Si spiega in due minuti",
+     "Apri e gioca",
      "giochi che si spiegano in due minuti: si comincia a giocare quasi subito."),
-    ("tanti", "giocatori", "5-99",
-     "Siamo in tanti",
-     "giochi che reggono un tavolo affollato, cinque persone o più."),
-    ("solo", "giocatori", "solo",
-     "Sono da solo",
-     "giochi che funzionano anche senza nessuno accanto."),
-    ("belli", "tag", "bello-da-vedere",
-     "Belli da vedere",
-     "giochi che a fine partita si fotograferebbero, per come restano in tavola."),
-    ("senza-competere", "tag", "senza-competere",
-     "Senza competere",
-     "giochi dove si vince o si perde tutti insieme, mai uno contro l'altro."),
+    ("da-soli", "livello", "da-soli",
+     "Leggi e gioca",
+     "giochi dove il regolamento si legge in famiglia, e basta quello."),
+    ("con-guida", "livello", "con-guida",
+     "Meglio farselo spiegare",
+     "giochi che vanno meglio se al tavolo c'è qualcuno che ci ha già giocato."),
     ("da-serata", "livello", "da-serata",
-     "Una serata seria",
+     "Prenditi la serata",
      "giochi con regole vere da imparare: si mette in conto la serata."),
-    ("in-due", "giocatori", "due",
-     "In due, sul serio",
-     "giochi pensati apposta per stare in due, non aggiustati alla bisogna."),
     ("tutti", None, None,
      "Fammi vedere tutto",
      None),
+    ("solo", "giocatori", "solo",
+     "Sono da solo",
+     "giochi che funzionano anche senza nessuno accanto."),
+    ("tanti", "giocatori", "5-99",
+     "Siamo in tanti",
+     "giochi che reggono un tavolo affollato, cinque persone o più."),
+    ("senza-competere", "tag", "senza-competere",
+     "Stiamo dalla stessa parte",
+     "giochi dove si vince o si perde tutti insieme, mai uno contro l'altro."),
+    ("belli", "tag", "bello-da-vedere",
+     "Voglio farci una foto",
+     "giochi che a fine partita si fotograferebbero, per come restano in tavola."),
 ]
+# "In due, sul serio" rimossa (Erbottega, 27/08): 125/148 giochi si possono
+# comunque giocare in due, il filtro non filtrava — vedi log in
+# context/progetti-personali.md.
+
+# Colore proprio di ciascuna delle 4 porte grandi (palette scelta da Damiano
+# 28/08, dopo il giro sui candidati del giallo): smeraldo/blu/ciliegia/viola,
+# scritte e segmenti sempre bianchi. Chiave = pid in PORTE_DEF, non il
+# livello_key per restare esplicito anche se un domani una porta grande
+# cambiasse filtro.
+COLORE_PORTA_GRANDE = {
+    "al-volo": "smeraldo",
+    "da-soli": "blu",
+    "con-guida": "ciliegia",
+    "da-serata": "viola",
+}
 
 
 # Filtro "giocatori" letto sul catalogo intero: 1 solo gioco (Funky Gallo)
@@ -220,31 +259,91 @@ def _filtra_porta(filtro, valore):
     raise ValueError(f"filtro porta sconosciuto: {filtro}")
 
 
+LIVELLO_DOTS = {key: dots for key, dots, _, _ in LEGENDA}
+
+
+def _vd_meter_html(dots_str):
+    """4 segmenti, ognuno esplicito on/off (currentColor: sulle porte grandi
+    diventano bianchi da soli, senza bisogno di una regola a parte) — stessa
+    idea dei pallini di dots_markup, markup diverso perché qui vive dentro
+    un pulsante a piena tinta invece che accanto a un titolo su sfondo
+    chiaro. Validato in bozze/anteprima-home-h2.html."""
+    segs = []
+    for ch in dots_str:
+        cls = "seg on" if ch == "●" else "seg"
+        segs.append(f'<span class="{cls}"></span>')
+    return f'<span class="vd-meter" aria-hidden="true">' + "".join(segs) + "</span>"
+
+
 def build_porte_html():
-    """Le otto porte sono ora link veri verso pagine vere (docs/c/<pid>/),
-    non più un innesco JS sulla stessa pagina — niente più data-porta-*,
-    quella configurazione ora vive solo in PORTE_DEF e la legge Python."""
-    voci = []
-    for pid, filtro, valore, etichetta, frase_tpl in PORTE_DEF:
+    """Struttura H2 (Damiano+Penna, 27-28/08): 4 porte grandi (scala "quanto
+    aiuto serve", una per livello) + una fascia larga a sé ("tutti", l'unica
+    via per i 30 giochi senza livello) + 4 porte piccole ("per come giocate").
+    Le grandi e le piccole restano link veri verso docs/c/<pid>/, come da
+    04/08 — cambia solo il markup e i colori, non lo schema di indirizzi."""
+    grandi = [p for p in PORTE_DEF if p[1] == "livello"]
+    fascia = next(p for p in PORTE_DEF if p[0] == "tutti")
+    piccole = [p for p in PORTE_DEF if p[1] != "livello" and p[0] != "tutti"]
+
+    voci_grandi = []
+    for pid, filtro, valore, etichetta, frase_tpl in grandi:
         n = _conta_porta(filtro, valore)
-        cls = "porta-btn porta-btn--tutti" if pid == "tutti" else "porta-btn"
-        voci.append(
-            f'<li><a class="{cls}" href="c/{pid}/index.html">'
-            f'{esc(etichetta)} <span class="porta-numero">· {n}</span></a></li>'
+        colore = COLORE_PORTA_GRANDE[pid]
+        dots = LIVELLO_DOTS[valore]
+        voci_grandi.append(
+            f'<li><a class="porta-grande-link porta-grande--{colore}" href="c/{pid}/index.html">'
+            f'{_vd_meter_html(dots)}'
+            f'<span class="pg-titolo">{esc(etichetta)}</span>'
+            f'<span class="pg-numero">· {n}</span></a></li>'
         )
-    return f"""<nav class="porte" aria-label="Scegli come vuoi cercare">
-  <ul class="porte-griglia">
-{chr(10).join(voci)}
+    grandi_html = f"""<section class="blocco-grandi" aria-label="Quanto aiuto ti serve per cominciare">
+  <p class="blocco-titolo">Quanto aiuto ti serve per cominciare?</p>
+  <p class="blocco-sottotitolo">Più segmenti pieni, più regole da imparare prima di partire.</p>
+  <ul class="porte-grandi-griglia">
+{chr(10).join(voci_grandi)}
   </ul>
-</nav>
+</section>
 """
+
+    pid_t, _, _, etichetta_t, _ = fascia
+    n_t = _conta_porta(None, None)
+    fascia_html = (
+        f'<a class="fascia-tutti" href="c/{pid_t}/index.html">'
+        f'<span class="fascia-tutti-titolo">{esc(etichetta_t)}</span>'
+        f'<span class="fascia-tutti-numero">· {n_t}</span></a>\n'
+    )
+
+    voci_piccole = []
+    for pid, filtro, valore, etichetta, frase_tpl in piccole:
+        n = _conta_porta(filtro, valore)
+        # Etichetta e numero dentro un unico span (non due figli diretti del
+        # flex .porta-btn): con l'etichetta nuova più lunga ("Stiamo dalla
+        # stessa parte") due flex-item separati si spaccavano a metà,
+        # lasciando il numero a galleggiare da solo sulla riga sbagliata —
+        # bug trovato a schermata vera, non a leggere il codice. Un solo
+        # span avvolge tutto: va a capo come un unico blocco di testo.
+        voci_piccole.append(
+            f'<li><a class="porta-btn" href="c/{pid}/index.html">'
+            f'<span class="porta-btn-testo">{esc(etichetta)} <span class="porta-numero">· {n}</span></span></a></li>'
+        )
+    piccole_html = f"""<section class="blocco-piccole" aria-label="Oppure cerca per occasione">
+  <p class="blocco-sottotitolo">O cerca per come giocate:</p>
+  <ul class="porte-piccole-griglia">
+{chr(10).join(voci_piccole)}
+  </ul>
+</section>
+"""
+
+    return grandi_html + fascia_html + piccole_html
 
 
 def build_accoglienza_html():
-    """Una frase sola, sopra la griglia dei pulsanti, fuori dalla fascia
-    bianca — non due righe separate. Testo dettato da Damiano il 04/08
-    (quarto giro), passato al «tu» il 04/08 sera (Penna, registro-tu-penna.md)
-    — non riformulare.
+    """Struttura H2 (decisione Damiano 28/08): due paragrafi, sopra la
+    griglia dei pulsanti, fuori dalla fascia bianca. Il primo (verbatim di
+    Damiano, non riformulare) dice cos'è il catalogo; il secondo è
+    l'istruzione già dettata il 04/08 (quarto giro), passata al «tu» lo
+    stesso giorno sera (Penna, registro-tu-penna.md) — non riformulare
+    nemmeno questo.
 
     La citazione finale pesca l'etichetta del pulsante 'al-volo' da
     PORTE_DEF: se quell'etichetta cambia, la citazione cambia con lei — mai
@@ -252,7 +351,8 @@ def build_accoglienza_html():
     """
     etichetta_al_volo = next(et for pid, _, _, et, _ in PORTE_DEF if pid == "al-volo")
     return f"""<section class="accoglienza" aria-label="Introduzione">
-  <p>Non sai che gioco scegliere? I pulsanti qui sotto ti aiutano: cliccane uno. Se è la prima volta che giochi, clicca su «{esc(etichetta_al_volo)}».</p>
+  <p class="corpo">Qui trovi i giochi da tavolo della biblioteca civica di Lecco. Alcuni sono già sullo scaffale, altri stanno arrivando.</p>
+  <p class="istruzione">Non sai che gioco scegliere? I pulsanti qui sotto ti aiutano: cliccane uno. Se è la prima volta che giochi, clicca su «{esc(etichetta_al_volo)}».</p>
 </section>
 """
 
@@ -318,14 +418,26 @@ def build_filtri_html(mostra_livello=True):
 
 
 def build_card_copertina_html(g):
-    """Miniatura, non manifesto: la scatola ha già il titolo stampato sopra,
-    non serve ripeterlo in grande. Segnaposto discreto (non un buco) per i
-    6/148 senza copertina — decisione Damiano 25/08: in una griglia di sole
-    immagini un buco si vede da lontano, in una riga con miniatura appena
-    diversa no."""
+    """Cella fissa con la copertina intera dentro (Direzione A, 26/08 sera):
+    la scatola ha già il titolo stampato sopra, object-fit:contain non la
+    ritaglia mai — l'altezza della cella è fissa in CSS, uguale per tutte,
+    non segue l'aspect-ratio dell'immagine (33/148 non sono quadrate).
+    Il nastro di stato sta sovrapposto alla copertina, non più nella riga
+    meta sotto. Segnaposto discreto per copertine assenti: non più un caso
+    vivo (148/148 coperte dal 26/08), resta come rete di sicurezza."""
+    ribbon_html = stato_ribbon(g)
     if g.get("copertina"):
-        return f'<span class="gioco-card-copertina"><img src="{{card_path}}{esc(g["copertina"])}" alt="" loading="lazy"></span>'
-    return '<span class="gioco-card-copertina gioco-card-copertina--assente" aria-hidden="true"></span>'
+        return (
+            f'<span class="gioco-card-copertina">'
+            f'<img src="{{card_path}}{esc(g["copertina"])}" alt="" loading="lazy">'
+            f'{ribbon_html}'
+            f'</span>'
+        )
+    return (
+        f'<span class="gioco-card-copertina gioco-card-copertina--assente">'
+        f'{ribbon_html}'
+        f'</span>'
+    )
 
 
 def build_card(g, card_path="../../"):
@@ -336,31 +448,32 @@ def build_card(g, card_path="../../"):
     ma il parametro resta esplicito e non implicito per non ripetere il bug
     del link fisso "g/..." che presumeva la home come unico chiamante.
 
-    Un solo catalogo (25/08): la card non distingue più fra i 48 di Damiano
-    e i giochi della biblioteca — livello, giocatori e stato compaiono
-    quando ci sono, la descrizione (di Penna, solo sui 48 per ora) idem.
-    Nessun campo assente mostra un vuoto o un "non disponibile"."""
+    Direzione A (26/08 sera, bozze/direzione-a-copertine.html v2): la
+    copertina è protagonista, cella fissa uguale per tutte. La descrizione
+    è uscita dalla griglia — si legge nella scheda, dov'era già. Le
+    etichette (vocabolario di Penna) NON entrano in griglia (Damiano,
+    26/08). Restano in meta-riga solo i pallini di livello e il numero di
+    giocatori; lo stato passa dal badge alla copertina (vedi
+    build_card_copertina_html/stato_ribbon). Nessun campo assente mostra
+    un vuoto o un "non disponibile"."""
     tags_attr = ",".join(g.get("tags", []))
     copertina_html = build_card_copertina_html(g).replace("{card_path}", esc(card_path))
-    giocatori_html = f'<span class="giocatori-badge">{esc(g["giocatori"])} giocatori</span>' if g.get("giocatori") else ""
-    livello_html = livello_badge(g) if g.get("livello_key") else ""
-    desc_html = f'<p class="card-desc">{esc(g["descrizione"])}</p>' if g.get("descrizione") else ""
+    giocatori_html = f'<span class="gioco-card-giocatori">{esc(g["giocatori"])} giocatori</span>' if g.get("giocatori") else ""
+    dots_html = dots_markup(g["livello_dots"], g["livello_key"]) if g.get("livello_key") else ""
     # giocatori_min/max possono essere None (1 gioco su 148, Funky Gallo:
     # buco nel catalogo della biblioteca) — "" nell'attributo, mai "None"
     # scritto in chiaro nell'HTML.
     gmin_attr = g["giocatori_min"] if g["giocatori_min"] is not None else ""
     gmax_attr = g["giocatori_max"] if g["giocatori_max"] is not None else ""
     return f"""<li class="gioco-card-wrap" data-slug="{esc(g['slug'])}" data-livello="{g['livello_key']}" data-giocatori-min="{gmin_attr}" data-giocatori-max="{gmax_attr}" data-tags="{esc(tags_attr)}">
-  <a class="gioco-card" href="{card_path}g/{g['slug']}/index.html">
+  <a class="gioco-card" data-stato="{g['stato_key']}" href="{card_path}g/{g['slug']}/index.html">
     {copertina_html}
     <div class="gioco-card-corpo">
       <h3>{esc(g['titolo'])}</h3>
       <div class="meta-riga">
-        {stato_badge(g)}
+        {dots_html}
         {giocatori_html}
-        {livello_html}
       </div>
-      {desc_html}
     </div>
   </a>
 </li>"""
@@ -385,6 +498,7 @@ def generate_index():
             title="Gioca in Biblioteca",
             description=INDEX_DESCRIPTION,
             css_path="",
+            body_attrs="",
         )
         + f'<main id="contenuto"><div class="container">'
         + build_accoglienza_html()
@@ -469,6 +583,10 @@ def build_category_page(porta):
             title=f"{esc(etichetta)} — Gioca in Biblioteca",
             description=description,
             css_path="../../",
+            # Tinta di pagina (29/08/2026): il colore della propria porta
+            # su titolo/filtri/link, vedi body[data-porta] in style.css —
+            # unico punto che scrive questo attributo, pid = data-porta.
+            body_attrs=f' data-porta="{pid}"',
         )
         + f"""<main id="contenuto"><div class="container">
   <p class="breadcrumb"><a href="../../index.html">&larr; Torna al catalogo</a></p>
@@ -528,9 +646,13 @@ NOTA_STATO = {
 
 
 def build_copertina_html(g, path_prefix):
-    """Assente per 6/148 (il catalogo non l'ha e non ne abbiamo procurata
-    una a mano): niente placeholder grigio, il corpo della scheda occupa
-    tutta la larghezza — vedi .scheda-layout in style.css."""
+    """Dal 26/08/2026 le copertine sono 148 su 148 (le ultime sei mandate
+    da Stefano della biblioteca): questo ramo non scatta piu'. Resta come
+    rete di sicurezza per un gioco nuovo senza copertina — niente
+    placeholder grigio, il corpo della scheda occupa tutta la larghezza,
+    vedi .scheda-layout in style.css.
+    Fino al 25/08 il commento qui diceva "assente per 6/148": era vero
+    quando fu scritto, ed e' rimasto falso senza che nulla fallisse."""
     if not g.get("copertina"):
         return ""
     return (
@@ -614,6 +736,7 @@ def generate_game_page(g):
             title=f"{esc(g['titolo'])} — Gioca in Biblioteca",
             description=esc(description),
             css_path="../../",
+            body_attrs="",
         )
         + f"""<main id="contenuto"><div class="container">
   <p class="breadcrumb"><a href="../../index.html">&larr; Torna al catalogo</a></p>

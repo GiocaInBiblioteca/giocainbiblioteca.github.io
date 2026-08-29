@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leggi e gioca — Gioca in Biblioteca</title>
+<meta name="description" content="44 giochi dove il regolamento si legge in famiglia, e basta quello.">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body data-porta="da-soli">
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+<header class="sito-header">
+  <div class="container">
+    <a class="sito-header-link" href="../../index.html">
+      <svg class="dado-icona" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="4"/>
+        <circle cx="8" cy="8" r="1.3" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="8" r="1.3" fill="currentColor" stroke="none"/>
+        <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/>
+        <circle cx="8" cy="16" r="1.3" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="16" r="1.3" fill="currentColor" stroke="none"/>
+      </svg>
+      <h1>Gioca in Biblioteca</h1>
+    </a>
+    <p class="sito-header-riga2">
+      <span class="sito-header-sub">Per scegliere un gioco fra quelli che trovi in biblioteca a Lecco</span>
+    </p>
+  </div>
+</header>
+<main id="contenuto"><div class="container">
+  <p class="breadcrumb"><a href="../../index.html">&larr; Torna al catalogo</a></p>
+  <header class="categoria-intestazione">
+    <h2 class="categoria-titolo">Leggi e gioca</h2>
+<p class="categoria-intro">44 giochi dove il regolamento si legge in famiglia, e basta quello.</p>
+  </header>
+
+<div class="filtri" aria-label="Filtra i giochi">
+  <div class="filtri-gruppo" role="group" aria-label="Numero di giocatori"><span class="filtri-etichetta">Numero di giocatori</span><div class="filtri-opzioni"><button type="button" class="filtro-btn" data-filtro-giocatori="tutti" aria-pressed="true">Tutti</button><button type="button" class="filtro-btn" data-filtro-giocatori="1-2" aria-pressed="false">1–2</button><button type="button" class="filtro-btn" data-filtro-giocatori="3-4" aria-pressed="false">3–4</button><button type="button" class="filtro-btn" data-filtro-giocatori="5-99" aria-pressed="false">5 o più</button></div></div>
+  <button type="button" class="filtro-reset" id="filtro-reset">Azzera i filtri</button>
+</div>
+<p class="contatore-risultati" id="contatore-risultati" role="status" aria-live="polite"></p>
+<div id="elenco-giochi">
+<ul class="griglia-giochi">
+<li class="gioco-card-wrap" data-slug="7-wonders" data-livello="da-soli" data-giocatori-min="3" data-giocatori-max="7" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/7-wonders/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/7-wonders.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>7 wonders</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">3-7 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="adventure-games-l-isola-vulcaninca" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/adventure-games-l-isola-vulcaninca/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/adventure-games-l-isola-vulcaninca.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Adventure games : L&#x27;isola vulcaninca</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="akros" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="2" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/akros/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/akros.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Akros</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="alibi-3-delitti-intricati-sei-proprio-tu-l-assassino" data-livello="da-soli" data-giocatori-min="5" data-giocatori-max="6" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/alibi-3-delitti-intricati-sei-proprio-tu-l-assassino/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/alibi-3-delitti-intricati-sei-proprio-tu-l-assassino.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Alibi, 3 delitti intricati. Sei proprio tu l&#x27;assassino?</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">5-6 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="block-and-key" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/block-and-key/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/block-and-key.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Block and key</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="bloom-town" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/bloom-town/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/bloom-town.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Bloom Town</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 – 4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="carcassonne" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/carcassonne/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/carcassonne.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Carcassonne</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="cascadia" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/cascadia/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/cascadia.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Cascadia</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="citadels-un-gioco-di-intrighi" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="8" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/citadels-un-gioco-di-intrighi/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/citadels-un-gioco-di-intrighi.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Citadels : un gioco di intrighi</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-8 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="cluedo-edizione-premium" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="6" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/cluedo-edizione-premium/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/cluedo-edizione-premium.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Cluedo : edizione premium</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-6 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="colt-express" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="6" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/colt-express/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/colt-express.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Colt Express</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-6 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="conspiracy" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/conspiracy/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/conspiracy.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Conspiracy</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 - 4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="escape-room-il-gioco" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="6" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/escape-room-il-gioco/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/escape-room-il-gioco.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Escape room : il gioco</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1-6 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="furbi-come-volpi-un-caso-per-galline-detective" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/furbi-come-volpi-un-caso-per-galline-detective/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/furbi-come-volpi-un-caso-per-galline-detective.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Furbi come volpi : un caso per galline detective!</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="grove-gioco-solitario-in-9-carte" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="99" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/grove-gioco-solitario-in-9-carte/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/grove-gioco-solitario-in-9-carte.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Grove : gioco solitario in 9 carte</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1+ giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="imagine" data-livello="da-soli" data-giocatori-min="3" data-giocatori-max="8" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/imagine/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/imagine.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Imagine</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">3-8 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="imagine-family-assemblate-animate-indovinate" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/imagine-family-assemblate-animate-indovinate/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/imagine-family-assemblate-animate-indovinate.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Imagine family : assemblate, animate, indovinate</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="jamaica" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="6" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/jamaica/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/jamaica.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Jamaica</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-6 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="king-of-tokyo" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="6" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/king-of-tokyo/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/king-of-tokyo.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>King of Tokyo</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-6 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="le-cronache-di-avel" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/le-cronache-di-avel/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/le-cronache-di-avel.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Le cronache di Avel</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="micromacro-crime-city-true-detective" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/micromacro-crime-city-true-detective/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/micromacro-crime-city-true-detective.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Micromacro : Crime city. True detective</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="momiji" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/momiji/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/momiji.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Momiji</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1 - 4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="my-shelfie" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/my-shelfie/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/my-shelfie.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>My shelfie</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="new-york-zoo" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="5" data-tags="bello-da-vedere">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/new-york-zoo/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/new-york-zoo.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>New York Zoo</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 – 5 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="oddville" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/oddville/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/oddville.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Oddville</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 – 4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="orchard-gioco-solitario-in-9-carte" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="99" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/orchard-gioco-solitario-in-9-carte/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/orchard-gioco-solitario-in-9-carte.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Orchard : gioco solitario in 9 carte</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1+ giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="patchwork-per-due-giocatori" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="2" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/patchwork-per-due-giocatori/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/patchwork-per-due-giocatori.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Patchwork : per due giocatori</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="pozioni-esplosive" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/pozioni-esplosive/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/pozioni-esplosive.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Pozioni esplosive</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="project-l" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/project-l/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/project-l.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Project L</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="santiago-de-cuba" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/santiago-de-cuba/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/santiago-de-cuba.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Santiago De Cuba</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 – 4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="shy-monsters" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="2" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/shy-monsters/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/shy-monsters.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Shy monsters</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="snow-time" data-livello="da-soli" data-giocatori-min="3" data-giocatori-max="5" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/snow-time/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/snow-time.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Snow Time</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">3 - 5 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="sobek-2-giocatori" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="2" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/sobek-2-giocatori/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/sobek-2-giocatori.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Sobek 2 giocatori</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="splendor" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/splendor/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/splendor.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Splendor</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="stone-age-junior" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/stone-age-junior/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/stone-age-junior.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Stone Age junior</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="tartaruga-splash" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/tartaruga-splash/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/tartaruga-splash.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Tartaruga splash!</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="that-s-not-a-hat" data-livello="da-soli" data-giocatori-min="3" data-giocatori-max="8" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/that-s-not-a-hat/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/that-s-not-a-hat.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>That&#x27;s not a hat</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">3-8 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="ticket-to-ride-europa" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="5" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/ticket-to-ride-europa/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/ticket-to-ride-europa.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Ticket to ride Europa</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-5 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="time-s-up-big-box-party-versione-gialla" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="12" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/time-s-up-big-box-party-versione-gialla/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/time-s-up-big-box-party-versione-gialla.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Time&#x27;s up! : BIG BOX Party : versione gialla</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-12 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="triqueta" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="5" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/triqueta/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/triqueta.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Triqueta</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-5 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="unstable-unicorns-kids" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="6" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/unstable-unicorns-kids/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/unstable-unicorns-kids.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Unstable Unicorns kids</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-6 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="villa-paletti" data-livello="da-soli" data-giocatori-min="2" data-giocatori-max="4" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/villa-paletti/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/villa-paletti.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Villa Paletti</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">2-4 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="welcome-to-new-las-vegas" data-livello="da-soli" data-giocatori-min="1" data-giocatori-max="100" data-tags="">
+  <a class="gioco-card" data-stato="in-arrivo" href="../../g/welcome-to-new-las-vegas/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/welcome-to-new-las-vegas.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">Sta arrivando</span></span>
+    <div class="gioco-card-corpo">
+      <h3>Welcome to New Las Vegas</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">1 – 100 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+<li class="gioco-card-wrap" data-slug="when-i-dream" data-livello="da-soli" data-giocatori-min="4" data-giocatori-max="10" data-tags="">
+  <a class="gioco-card" data-stato="in-biblioteca" href="../../g/when-i-dream/index.html">
+    <span class="gioco-card-copertina"><img src="../../copertine/when-i-dream.jpg" alt="" loading="lazy"><span class="gioco-card-ribbon">In biblioteca</span></span>
+    <div class="gioco-card-corpo">
+      <h3>When I dream</h3>
+      <div class="meta-riga">
+        <span class="dots livello-da-soli"><span class="dot dot-on" aria-hidden="true">●</span><span class="dot dot-on" aria-hidden="true">●</span><span class="dot" aria-hidden="true">○</span><span class="dot" aria-hidden="true">○</span></span>
+        <span class="gioco-card-giocatori">4-10 giocatori</span>
+      </div>
+    </div>
+  </a>
+</li>
+</ul>
+</div></div></main><footer class="sito-footer"></footer>
+</body>
+</html>
+<script src="../../js/filtri.js"></script>
