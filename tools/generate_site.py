@@ -128,15 +128,16 @@ HEAD = """<!DOCTYPE html>
 # frase unica del sottotitolo. Riga condivisa da TUTTE le pagine (HEAD è un
 # solo template): non solo la home, coerente su tutto il sito per costruzione.
 
-FOOTER = """<footer class="sito-footer"></footer>
+FOOTER = """<footer class="sito-footer"><div class="container"><p class="footer-testo">Hai scelto un gioco da qui? Raccontami com'è andata: <a href="mailto:barbattack84@gmail.com?subject=Gioca%20in%20Biblioteca">barbattack84@gmail.com</a> — è l'indirizzo di chi ha fatto il catalogo, non della biblioteca.</p></div></footer>
 </body>
 </html>
 """
-# Nessun testo nel piede per ora (decisione Damiano 04/08, secondo giro Penna
-# fermato: "sembra per vantarsi"). La chiusura visiva (linea tricolore, stessa
-# del sotto-fascia dell'header) sostituisce il bordo+testo di prima in
-# style.css .sito-footer — non un'introduzione a un vuoto. Struttura pronta a
-# riaccogliere un <p> dentro <div class="container"> quando la frase ci sarà.
+# Testo del piede aggiunto il 29/09 (Penna, approvato Damiano): il divieto del
+# 04/08 riguardava un testo che "sembrava per vantarsi", non un testo per
+# sempre. FOOTER è condiviso da TUTTE le pagine generate (index, elenco,
+# scheda — vedi i tre usi qui sotto), quindi la riga compare ovunque per
+# costruzione, non solo in home. Struttura .container + <p> dentro <footer>
+# esattamente come preannunciato dal commento in style.css .sito-footer.
 
 # ---------------------------------------------------------------------------
 # INDEX
